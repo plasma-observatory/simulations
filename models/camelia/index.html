@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CAMELIA &#8212; PO Numerical Simulations guide  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'models/camelia';</script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="iPIC3D" href="../iPIC3D_SM/" />
+    <link rel="prev" title="COHMPA model" href="../COHMPA/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PO Numerical Simulations guide  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Working Group</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../wg/">The Working Group</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Model descriptions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vlasiator/">Vlasiator details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hypsi/">HYPSI details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HVM/">HVM details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ViDA/">ViDA details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swmf/">SWMF details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menura/">Menura details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../COHMPA/">COHMPA detais</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CAMELIA details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iPIC3D_SM/">iPIC3D details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../muphyii/">muphyII details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psc/">PSC details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piran/">PIRAN details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenMHD/">OpenMHD details</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data/">Data descriptions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/models/camelia.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CAMELIA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-availability">Data availability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-methods">Numerical Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="camelia">
+<h1>CAMELIA<a class="headerlink" href="#camelia" title="Link to this heading">#</a></h1>
+<p>CAMELIA (Current Advance Method Et cycLIc leApfrog) <a class="footnote-reference brackets" href="#id21" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is a hybrid kinetic code where ions are described as macro-particles using a particle-in-cell model while electrons are considered as a massless charge-neutralising fluid.</p>
+<p>It is based on the CAM-CL code by Alan Matthews <a class="footnote-reference brackets" href="#id22" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Additional information</p></td>
+<td><p><a class="reference external" href="https://https://www.asu.cas.cz/~helinger/camelia.html">CAMELIA</a></p></td>
+</tr>
+<tr class="row-even"><td><p>WG Point of Contact</p></td>
+<td><p>Luca Franci</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current code version</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Code/repository</p></td>
+<td><p>Unpublished/Closed-source</p></td>
+</tr>
+<tr class="row-odd"><td><p>Legal Code License</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Software code
+languages and tools</p></td>
+<td><p>Fortran + extensions of Fortran 95</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h2>
+<p>CAMELIA has been extensively used to model and study plasma turbulence, magnetic reconnection, kinetic instabilities, and particle energisation in collisionless space plasmas.
+In particular, the turbulence studies have investigated how the turbulent cascade develops self-consistently from large fluid scales down to ion kinetic scales both in 2D <a class="footnote-reference brackets" href="#id23" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id24" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> and in 3D <a class="footnote-reference brackets" href="#id25" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>, how it is controlled by key parameters such as the plasma beta <a class="footnote-reference brackets" href="#id26" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>, and its interplay with magnetic reconnection <a class="footnote-reference brackets" href="#id27" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> and with kinetic instabilities such as the firehose <a class="footnote-reference brackets" href="#id28" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> and mirror <a class="footnote-reference brackets" href="#id29" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> instabilities.
+Numerical simulations performed with CAMELIA has been used to provide a turbulent plasma background on which to advance test-particle trajectories to investigate the acceleration of energetic electrons <a class="footnote-reference brackets" href="#id30" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>, to directly compare different complementary numerical models (Hall-MHD <a class="footnote-reference brackets" href="#id31" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id32" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>, Hybrid-Vlasov <a class="footnote-reference brackets" href="#id33" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id34" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>, and fully kinetic <a class="footnote-reference brackets" href="#id35" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a>) and to compare numerical and observational data <a class="footnote-reference brackets" href="#id36" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id37" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>, also obtaining a remarkable quantitative agreement with to in-situ spacecraft measurements in both the near-Earth space <a class="footnote-reference brackets" href="#id38" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a> and in the near-Sun space <a class="footnote-reference brackets" href="#id39" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="data-availability">
+<h2>Data availability<a class="headerlink" href="#data-availability" title="Link to this heading">#</a></h2>
+<p>Some data is available publicly. More will be uploaded online over the next few months.</p>
+<p>Access to data existing data, e.g., data associated to publications can be requested.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Access</p></td>
+<td><p>Used</p></td>
+<td><p>Comments</p></td>
+</tr>
+<tr class="row-even"><td><p>Dataset 1</p></td>
+<td><p>` &lt;<a class="reference external" href="https://b2share.eudat.eu/records/a58135af9c9d429f92c15ce88bdfdd55">https://b2share.eudat.eu/records/a58135af9c9d429f92c15ce88bdfdd55</a>&gt;`_</p></td>
+<td><p><a class="reference external" href="https://www.doi.org/10.3847/1538-4357/833/1/91">Franci et al. ApJ 2016</a></p></td>
+<td><p>Magnetic field data from 2D hybrid simulations
+of plasma turbulence with 12 different values
+of the plasma beta</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="simulations-on-demand">
+<h2>Simulations-on-demand<a class="headerlink" href="#simulations-on-demand" title="Link to this heading">#</a></h2>
+<p>CAMELIA is extremely efficient and performs very well on thousands of cores simultaneously, meaning that even quite big simulations can be run in just a few days on HPC systems (provided we have an active HPC allocation with enough computing time at the time of request).</p>
+<p>Small/local simulations can be set up and supported for external users on best-effort basis.</p>
+<p>We are always open for new collaborations.</p>
+</section>
+<section id="numerical-methods">
+<h2>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Link to this heading">#</a></h2>
+<p>The ions are represented as a collection of macro-particles, i.e., portions of the ion velocity distributions functions with a fixed number of real ions that are close in phase space, whose positions and velocities are updated solving the usual equations of motion.
+The electrons are represented as a fluid under specific assumptions: quasi-neutrality, negligible mass, constant temperature, and ideal gas law.</p>
+<p>The plasma has only two time-dependent components: (i) ion macro-particles with their individual positions and velocities, and (ii) magnetic field specified at the nodes of the computational grid. The electric field is computed using the generalised Ohm’s law, which is an equation of state with no time evolution.</p>
+<p>The time derivative of a variable is evaluated at the midpoint of its time-step. Originally, the code implemented the Current Advance Method (CAM) for advancing the ion macro-particles and a Cyclic Leapfrog (CL) to evolve the magnetic field. Hence, its name CAMELIA (Current Advance Method Et cycLIc leApfrog). The CAM was replaced with the Boris method, that requires the fields to be known at half time steps ahead of the particle velocities.</p>
+<p>CAMELIA is written in Fortran 77 with extensions in Fortran 95.
+It includes 1D, 2D, and 3D versions.
+Bi/trilinear interpolation/weighting is used to determine the interaction of a macro-particle with the computational grid and the deposition of its contribution to the particle moments (density, velocity, current density) on the computational grid.
+An explicit form of the time-dependent differential equations is used.
+Spatial derivatives are approximated by centred finite-differences (a version using spectral methods has been developed recently).
+The code is parallelised via MPI using spatial and/or particle decompositions (the spatial decomposition could be in all spatial directions). It also implements a hybrid openMP/MPI parallelisation.
+The output can be written in simple ASCII, binary, or HDF5 files, including parallel binary (MPI-IO) and parallel HDF5.
+A checkpoint/restart procedure in parallel HDF5 allow us to run simulations exceeding the maximum wall-time of a single job.
+A preliminary GPU version of the code, ported using OpenACC directives, is under development.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Franci, L., P. Hellinger, M. Guarrasi, C. H. K. Chen, E. Papini, A. Verdini, L. Matteini, and S. Landi, Three-dimensional simulations of solar wind turbulence with the hybrid code CAMELIA, J. Phys.: Conf. Ser., 1031, 012002, 2018 <a class="reference external" href="https://www.doi.org/10.1088/1742-6596/1031/1/012002">https://www.doi.org/10.1088/1742-6596/1031/1/012002</a></p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Matthews, A., Current advance method and cyclic leapfrog for 2D multispecies hybrid plasma simulations, J. Comput. Phys., 112, 102–116, 1994 <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0021999184710849">https://www.sciencedirect.com/science/article/abs/pii/S0021999184710849</a></p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>Franci et al., High-resolution hybrid simulations of kinetic plasma turbulence at proton scales, Astrophys J., 812(1):21, 2015, <a class="reference external" href="https://www.doi.org/10.1088/0004-637X/812/1/21">https://www.doi.org/10.1088/0004-637X/812/1/21</a></p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
+<p>Franci et al., Solar wind turbulence from MHD to sub-ion scales: high-resolution hybrid simulations, Astrophys J. Lett., 804(2):L39, 2015, <a class="reference external" href="https://www.doi.org/10.1088/2041-8205/804/2/L39">https://www.doi.org/10.1088/2041-8205/804/2/L39</a></p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
+<p>Franci et al., Solar Wind Turbulent Cascade from MHD to Sub-ion Scales: Large-size 3D Hybrid Particle-in-cell Simulations, Astrophys J., 2018, <a class="reference external" href="853(1):26,https://www.doi.org/10.3847/1538-4357/aaa3e8">853(1):26,https://www.doi.org/10.3847/1538-4357/aaa3e8</a></p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">6</a><span class="fn-bracket">]</span></span>
+<p>Franci et al., Plasma beta dependence of the ion-scale spectral break of solar wind turbulence: high-resolution 2D hybrid simulations, Astrophys J., 833(1):91, 2016, <a class="reference external" href="https://www.doi.org/10.3847/1538-4357/833/1/91">https://www.doi.org/10.3847/1538-4357/833/1/91</a></p>
+</aside>
+<aside class="footnote brackets" id="id27" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">7</a><span class="fn-bracket">]</span></span>
+<p>Franci et al.., Magnetic reconnection as a driver for a sub-ion scale cascade in plasma turbulence, Astrophys J. Lett., 850(1):L16, 2017, <a class="reference external" href="https://www.doi.org/10.3847/2041-8213/aa93fb">https://www.doi.org/10.3847/2041-8213/aa93fb</a></p>
+</aside>
+<aside class="footnote brackets" id="id28" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">8</a><span class="fn-bracket">]</span></span>
+<p>Hellinger et al., Plasma turbulence and kinetic instabilities at ion scales in the expanding solar wind, Astrophys J. Lett., 811(2):L32, 2015, <a class="reference external" href="https://www.doi.org/10.1088/2041-8205/811/2/L32">https://www.doi.org/10.1088/2041-8205/811/2/L32</a></p>
+</aside>
+<aside class="footnote brackets" id="id29" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">9</a><span class="fn-bracket">]</span></span>
+<p>Hellinger et al., Mirror instability in the turbulent solar wind, Astrophys J., 838(2):158, 2017, <a class="reference external" href="https://www.doi.org/10.3847/1538-4357/aa67e0">https://www.doi.org/10.3847/1538-4357/aa67e0</a></p>
+</aside>
+<aside class="footnote brackets" id="id30" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">10</a><span class="fn-bracket">]</span></span>
+<p>Trotta et al., Fast acceleration of transrelativistic electrons in astrophysical turbulence, Astrophys J., 894(2):136, 2020, <a class="reference external" href="https://www.doi.org/10.3847/1538-4357/ab873c">https://www.doi.org/10.3847/1538-4357/ab873c</a></p>
+</aside>
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">11</a><span class="fn-bracket">]</span></span>
+<p>Papini et al., Can Hall Magnetohydrodynamics Explain Plasma Turbulence at Sub-ion Scales?, Astrophys J. 870(1):52, 2019 , <a class="reference external" href="https://www.doi.org/10.3847/1538-4357/aaf003">https://www.doi.org/10.3847/1538-4357/aaf003</a></p>
+</aside>
+<aside class="footnote brackets" id="id32" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">12</a><span class="fn-bracket">]</span></span>
+<p>Papini et al., Multidimensional Iterative Filtering: a new approach for investigating plasma turbulence in numerical simulations, J. Plasma Phys., 86(5), 871860501, 2020, <a class="reference external" href="https://www.doi.org/10.1017/S0022377820001221">https://www.doi.org/10.1017/S0022377820001221</a></p>
+</aside>
+<aside class="footnote brackets" id="id33" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">13</a><span class="fn-bracket">]</span></span>
+<p>Cerri et al., Plasma turbulence at ion scales: a comparison between PIC and Eulerian hybrid-kinetic approaches, J. Plasma Phys., 83(2):705830202, 2017,  <a class="reference external" href="https://www.doi.org/10.1017/S0022377817000265">https://www.doi.org/10.1017/S0022377817000265</a></p>
+</aside>
+<aside class="footnote brackets" id="id34" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">14</a><span class="fn-bracket">]</span></span>
+<p>Cerri et al., Kinetic plasma turbulence: recent insights and open questions from 3D3V simulations, Front. Astron. Space Sci., 6:64, 2019,  <a class="reference external" href="https://www.doi.org/10.3389/fspas.2019.00064">https://www.doi.org/10.3389/fspas.2019.00064</a></p>
+</aside>
+<aside class="footnote brackets" id="id35" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">15</a><span class="fn-bracket">]</span></span>
+<p>Franci et al., Anisotropic electron heating in turbulence-driven magnetic reconnection in the near-Sun solar wind, Astrophys J., 936:27, 2022, <a class="reference external" href="https://www.doi.org/10.3847/1538-4357/ac7da">https://www.doi.org/10.3847/1538-4357/ac7da</a></p>
+</aside>
+<aside class="footnote brackets" id="id36" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">16</a><span class="fn-bracket">]</span></span>
+<p>Bandyopadhyay et al, In situ observation of Hall Magnetohydrodynamic Cascade in Space Plasma, Phys. Rev. Lett., 124, 225101, 2020, <a class="reference external" href="https://www.doi.org/10.1103/PhysRevLett.124.225101">https://www.doi.org/10.1103/PhysRevLett.124.225101</a></p>
+</aside>
+<aside class="footnote brackets" id="id37" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">17</a><span class="fn-bracket">]</span></span>
+<p>Matteini et al., Magnetic field turbulence in the solar wind at sub-ion scales: in situ observations and numerical simulations, Front. Astron. Space Sci., 2020, 7:83, <a class="reference external" href="https://www.doi.org/10.3389/fspas.2020.563075">https://www.doi.org/10.3389/fspas.2020.563075</a></p>
+</aside>
+<aside class="footnote brackets" id="id38" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">18</a><span class="fn-bracket">]</span></span>
+<p>Franci et al., Modeling MMS observations at the Earth’s magnetopause with hybrid simulations of Alfvénic turbulence, Astrophys J., 898:175, 2020, <a class="reference external" href="https://www.doi.org/10.3847/1538-4357/ab9a47">https://www.doi.org/10.3847/1538-4357/ab9a47</a></p>
+</aside>
+<aside class="footnote brackets" id="id39" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">19</a><span class="fn-bracket">]</span></span>
+<p>Franci et al., Evidence of a “current-mediated” turbulent regime in space and astrophysical plasmas, arXiv, 2020, <a class="reference external" href="https://arxiv.org/abs/2010.05048">https://arxiv.org/abs/2010.05048</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../COHMPA/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">COHMPA model</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../iPIC3D_SM/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">iPIC3D</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-availability">Data availability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-methods">Numerical Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By M. Alho & the PO NSWG
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, M. Alho &amp; the PO NSWG.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

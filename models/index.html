@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Model descriptions &#8212; PO Numerical Simulations guide  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'models';</script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Vlasiator" href="vlasiator/" />
+    <link rel="prev" title="The Working Group" href="../wg/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PO Numerical Simulations guide  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Working Group</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../wg/">The Working Group</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Model descriptions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="vlasiator/">Vlasiator details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypsi/">HYPSI details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVM/">HVM details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ViDA/">ViDA details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swmf/">SWMF details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menura/">Menura details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="COHMPA/">COHMPA detais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camelia/">CAMELIA details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/">iPIC3D details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muphyii/">muphyII details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psc/">PSC details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piran/">PIRAN details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenMHD/">OpenMHD details</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/">Data descriptions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/models.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Model descriptions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-overview">Models overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vlasiator">Vlasiator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypsi">HYPSI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvm">HVM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vida">ViDA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mage">MAGE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#swmf">SWMF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menura">MENURA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amitis">Amitis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohmpa">COHMPA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hall-mhd">Hall-MHD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camelia">CAMELIA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipic3d">iPIC3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpat">GPAT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vpic">VPIC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muphyii"><em>muphyII</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#psc">PSC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piran-particles-in-resonance">PIRAN: Particles In ResonANce</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openmhd">OpenMHD</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="model-descriptions">
+<h1>Model descriptions<a class="headerlink" href="#model-descriptions" title="Link to this heading">#</a></h1>
+<section id="models-overview">
+<h2>Models overview<a class="headerlink" href="#models-overview" title="Link to this heading">#</a></h2>
+<section id="vlasiator">
+<h3>Vlasiator<a class="headerlink" href="#vlasiator" title="Link to this heading">#</a></h3>
+<p>Vlasiator is a 6D ion-kinetic hybrid-Vlasov model for the Earth’s global magnetosphere. Vlasiator simulates the dynamics of plasma using a hybrid-Vlasov model, where protons are described by their distribution function f(r,v,t) in ordinary (r) and velocity (v) space, and electrons are a charge-neutralising fluid. This approach neglects electron kinetic effects but retains ion kinetics. The time-evolution of f(r,v,t) is given by Vlasov’s equation, which is coupled self-consistently to Maxwell’s equations giving the evolution of the electric and magnetic fields E and B. Maxwell’s equations neglect the displacement current. The equations are closed by a generalised Ohm’s law including the Hall term.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vlasiator/">Vlasiator details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vlasiator/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlasiator/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlasiator/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlasiator/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vlasiator/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="hypsi">
+<h3>HYPSI<a class="headerlink" href="#hypsi" title="Link to this heading">#</a></h3>
+<p>HYPSI is an hybrid-kinetic PIC code, where ions are modelled as macroparticles and advanced using the standard PIC method while the electrons are modelled as a massless, charge-neutralizing fluid with an adiabatic equation of state.</p>
+<p>HYPSI supports several initialisations and boundary conditions, the most used one of which allows the propagation of a shock wave in the simulation domain. This is done thorugh the injection method, employing an open inlow boundary and a reflective wall. The other two directions have periodic boundary conditions. Importantly, HYPSI was one of the first codes supporting a realistic turbulent initialisation for the shock upstream. Such turbulent initialisation is performed through a combination of MHD and hybrid kinetic simulations, where the output of an MHD model becomes the initial condition for the shock simulation. An important aspect of this initialisation is that the perturbation is finite in both space and time extent. Recent improvements allow for continuous injection of upstream turbulence.</p>
+<p>Two-dimensional datasets covering a large shock parameter range (0 to 90 degrees shock normal angles, 0.1 to 10 plasma beta, Alfvanic Mach numbers 2 to 30) are easily provided upon request, useful to look at electromagnetic fields, plasma moments, particle distributions. Turbulent and three-dimensional runs can also be provided, though they require more planning due to computational constraint. An extensive set of software to analyse HYPSI output is also available upon request in both MATLAB and Python, with the Python version ‘hypy’ being released soon.</p>
+<p>For further details, see below:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hypsi/">HYPSI details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hypsi/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypsi/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypsi/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypsi/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypsi/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="hvm">
+<h3>HVM<a class="headerlink" href="#hvm" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://doi.org/10.1063/1.4893301">Hybrid-Vlasov-Maxwell</a> (HVM)  is an Eulerian ion-kinetic simulation code, used for e.g. large-scale local turbulence simulations.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HVM/">HVM details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HVM/#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVM/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVM/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVM/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVM/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HVM/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="vida">
+<h3>ViDA<a class="headerlink" href="#vida" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://doi.org/10.1017/S0022377819000631">ViDA</a> is a Vlasov-Darwin solver targeting electron-scale physics, providing Eulerian Vlasov simulations for both ions and electrons.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ViDA/">ViDA details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ViDA/#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ViDA/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ViDA/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ViDA/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ViDA/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ViDA/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="mage">
+<h3>MAGE<a class="headerlink" href="#mage" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://cgs.jhuapl.edu/Models/mage.php">MAGE</a>, or the Multiscale Atmosphere-Geospace Environment model is coupled model developed to include the whole geospace to resolve global dynamics and mesoscale processes. The magnetospheric backbone model of MAGE is the Grid Agnostic MHD for Extended Research Applications model, or <a class="reference external" href="https://cgs.jhuapl.edu/Models/gamera.php">GAMERA</a>.</p>
+</section>
+<section id="swmf">
+<h3>SWMF<a class="headerlink" href="#swmf" title="Link to this heading">#</a></h3>
+<p>The Space Weather Modeling Framework (SWMF) is a software framework which models a wide range of temporal and spatial scales as well as the different physical processes governing the different heliophysics domains through a modular approach. The heart of the framework is the BATS-R-US versatile, high-performance, generalized magnetohydrodynamic code with adaptive mesh refinement that can be configured to solve the governing equations of ideal and resistive MHD, semi-relativistic, anisotropic, Hall, multispecies, and multi-fluid extended magnetofluid equations (XMHD) and non-neutral multifluid plasmas. The BATS-R-US is used to model several physics domains, and its high efficiency (faster than real time) is crucial for the success of the framework. Further descriptions of the SWMF modules can be found below.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="swmf/">SWMF details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swmf/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swmf/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swmf/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swmf/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swmf/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="menura">
+<h3>MENURA<a class="headerlink" href="#menura" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://menura.readthedocs.io/en/latest/">Menura</a> is parallel-GPU hybrid Particle-in-Cell code, with the speciality of being able to both simulate and introduce solar wind turbulence into global simulations.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="menura/">Menura details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="menura/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menura/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menura/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menura/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menura/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="amitis">
+<h3>Amitis<a class="headerlink" href="#amitis" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="www.amitiscode.com">Amitis</a> is a three-dimensional, time-dependent, hybrid-kinetic plasma model, providing high performance via parallel GPU-based supercomputing.</p>
+</section>
+</section>
+<section id="cohmpa">
+<h2>COHMPA<a class="headerlink" href="#cohmpa" title="Link to this heading">#</a></h2>
+<p>The “COmpressible Hall Magnetohydrodynamics simulations for Plasma Astrophysics” (COHMPA)[1] is a pseudo-spectral algorithm which solves the three-dimensional magnetohydrodynamics equations on a three-periodic Cartesian domain. It eventually includes the Hall and the electron pressure terms in the induction equation for the magnetic field. COHMPA exploits a MPI-based parallelization and employs fast Fourier transform routines (FFTW).</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="COHMPA/">COHMPA detais</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="COHMPA/#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="COHMPA/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="COHMPA/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="COHMPA/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="COHMPA/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="COHMPA/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="hall-mhd">
+<h3>Hall-MHD<a class="headerlink" href="#hall-mhd" title="Link to this heading">#</a></h3>
+<p>A code for solving the viscous-resistive, fully compressible Hall-MHD equations, used for local turbulence and reconnection studies, especially by providing large-scale input for CAMELIA.</p>
+</section>
+<section id="camelia">
+<h3>CAMELIA<a class="headerlink" href="#camelia" title="Link to this heading">#</a></h3>
+<p>CAMELIA is a hybrid Particle-in-Cell simulation, used for studying turbulence and reconnection in local simulations, especially from larger-scale background from the Hall-MHD code described above. CAMELIA has already generated a large archive of simulations over a large parameter space.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="camelia/">CAMELIA details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camelia/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camelia/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camelia/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camelia/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camelia/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="ipic3d">
+<h3>iPIC3D<a class="headerlink" href="#ipic3d" title="Link to this heading">#</a></h3>
+<p>iPIC3D is a massively parallel, moment-implicit Particle-in-Cell (PIC) code for large-scale kinetic plasma simulations, particularly targeting global magnetospheric dynamics. Developed in C++ with hybrid MPI/OpenMP parallelism, it is designed for exascale platforms and optimized for both CPU and GPU architectures including AMD MI300A and NVIDIA Grace Hopper.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="iPIC3D_SM/">iPIC3D details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/#capabilities">Capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/#use-cases">Use Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/#data-availability">Data Availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/#simulations-on-demand">Simulations-on-Demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iPIC3D_SM/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="gpat">
+<h3>GPAT<a class="headerlink" href="#gpat" title="Link to this heading">#</a></h3>
+<p>GPAT is an open source code solving energetic particle transport equations by integrating <a class="reference external" href="https://stochastic-parker.readthedocs.io/en/latest/index.html">stochastic differential equations</a>, available on GitHub at <a class="github reference external" href="https://github.com/xiaocanli/stochastic-parker">xiaocanli/stochastic-parker</a>.</p>
+</section>
+<section id="vpic">
+<h3>VPIC<a class="headerlink" href="#vpic" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://doi.org/10.1109/TPDS.2021.3084795">VPIC</a> is an open source, fully kinetic, relativistic, general purpose particle-in-cell (PIC) code for modeling a broad range of plasmas—from short-pulse laser-plasma interactions to Earth-scale magnetospheric plasmas, including energetic particle acceleration, magnetic reconnection, and laser plasma interaction. VPIC is available on GitHub: <a class="github reference external" href="https://github.com/lanl/vpic-kokkos">lanl/vpic-kokkos</a>.</p>
+</section>
+<section id="muphyii">
+<h3><em>muphyII</em><a class="headerlink" href="#muphyii" title="Link to this heading">#</a></h3>
+<p>The <em>muphyII</em> code is a simulation framework for collisionless plasma physics and targeted at space plasmas in particular. The <em>muphyII</em> code utilizes a hierarchy of models with different inherent scales to address the separation of scales problem typically encountered in these plasmas. It allows stand-alone use of models as well as a model-based dynamic and adaptive domain decomposition and resorts to novel techniques for energy conservation, careful treatment of inner-domain model boundaries for interface coupling, and robust time stepping algorithms.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="muphyii/">muphyII details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="muphyii/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muphyii/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muphyii/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muphyii/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muphyii/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="psc">
+<h3>PSC<a class="headerlink" href="#psc" title="Link to this heading">#</a></h3>
+<p>Plasma Simulation Code (PSC) is a 3-dimensional fully electromagnetic particle-in-cell code for kinetic plasma simulations. It supports Nvidia GPUs and patch-based dynamic load balancing.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="psc/">PSC details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psc/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psc/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psc/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psc/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psc/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="piran-particles-in-resonance">
+<h3>PIRAN: Particles In ResonANce<a class="headerlink" href="#piran-particles-in-resonance" title="Link to this heading">#</a></h3>
+<p>Quasilinear diffusion coefficients can be used to characterise the statistical response of charged particles to perturbations by plasma waves, via resonant wave-particle interactions. The open-source PIRAN software package (“Particles In ResonANce”) is written using Python, and allows the user to calculate relativistic diffusion coefficients in kinetic energy and pitch-angle space via the two main current proposed methods in the literature.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="piran/">PIRAN details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="piran/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piran/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piran/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piran/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piran/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="openmhd">
+<h3>OpenMHD<a class="headerlink" href="#openmhd" title="Link to this heading">#</a></h3>
+<p>OpenMHD is a finite-volume magnetohydrodynamic (MHD) code, written in modern Fortran and CUDA fortran. The program is parallelized by MPI+OpenMP on CPU and by MPI+CUDA on GPU.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="OpenMHD/">OpenMHD details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OpenMHD/#use-cases">Use cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenMHD/#data-availability">Data availability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenMHD/#simulations-on-demand">Simulations-on-demand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenMHD/#numerical-methods">Numerical Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenMHD/#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../wg/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Working Group</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="vlasiator/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vlasiator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-overview">Models overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vlasiator">Vlasiator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypsi">HYPSI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvm">HVM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vida">ViDA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mage">MAGE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#swmf">SWMF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menura">MENURA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amitis">Amitis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohmpa">COHMPA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hall-mhd">Hall-MHD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camelia">CAMELIA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipic3d">iPIC3D</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpat">GPAT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vpic">VPIC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muphyii"><em>muphyII</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#psc">PSC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piran-particles-in-resonance">PIRAN: Particles In ResonANce</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openmhd">OpenMHD</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By M. Alho & the PO NSWG
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, M. Alho &amp; the PO NSWG.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

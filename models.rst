@@ -145,4 +145,4 @@ OpenMHD
 OpenMHD is a finite-volume magnetohydrodynamic (MHD) code, written in modern Fortran and CUDA fortran. The program is parallelized by MPI+OpenMP on CPU and by MPI+CUDA on GPU.
 
 .. toctree::
-   OpenMHD details<models/piran>
+   OpenMHD details<models/OpenMHD>
